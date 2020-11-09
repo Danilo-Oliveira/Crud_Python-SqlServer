@@ -7,9 +7,11 @@ import pyodbc # Conexao para o Python ( Connection to Python )
 
 # Faz a conexão do Python e SQL Server. ( Does the Python and SQL Server connection )
 def conexao(self):
-    self.server = 'DANILO\SQLEXPRESS' 
-    self.database = 'Teste'
-    self.cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+self.server+';DATABASE='+self.database+';Trusted_Connection=yes;')        
+    self.server = 'dan-pc' 
+    self.database = 'Alunos'
+    self.username = 'SA'
+    self.password = ''
+    self.cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+self.server+';DATABASE='+self.database+';UID='+self.username+';PWD='+self.password)      
     self.cursor = self.cnxn.cursor()
     self.cursor.execute(self.exeSQL)
     

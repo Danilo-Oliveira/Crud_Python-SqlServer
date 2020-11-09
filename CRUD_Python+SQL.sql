@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------
+-- Create a new database called 'Danilo'
+-- Connect to the 'master' database to run this snippet
+USE master
+GO
+-- Create the new database if it does not exist already
+IF NOT EXISTS (
+	SELECT name
+		FROM sys.databases
+		WHERE name = N'Danilo'
+)
+CREATE DATABASE Danilo
+GO
+
 --Cria a tabela t_alunos
 	if not exists(select * from INFORMATION_SCHEMA.tables where table_name = 't_alunos') 
 	begin
@@ -16,6 +29,8 @@
 	go
 
 -- drop table t_alunos
+
+-- select * from t_alunos
 
 -------------------------------------------------------------------------
 --Cria a Tabela t_genero
